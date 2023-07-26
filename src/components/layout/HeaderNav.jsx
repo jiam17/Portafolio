@@ -3,30 +3,33 @@ import { NavLink } from 'react-router-dom';
 
 export const HeaderNav = () => {
   return (
-    <header className='header'>
-        <div className='logo'>
-        <span>J</span>
-        <h3>Jonathan alfaro - web</h3>
-        </div>
-        <nav>
-            <ul>
-                <li>
-                <NavLink to="/inicio" className={({isActive}) => isActive ? "active" : null}>Inicio</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/portafolio">Portafolio</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/servicio">Servicios</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/curriculum">Curriculum</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/contacto">Contacto</NavLink>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<header>
+  <nav className='navbar navbar-expand-lg bg-body-tertiary'>
+    <div className='container-fluid'>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className='navbar-nav'>
+          <li className='nav-item'>
+            <NavLink className='nav-link' to="/inicio" isActive={({isActive}) => isActive ? "active" : null}>Inicio</NavLink>
+          </li>
+          <li className='nav-item'>
+            <NavLink className='nav-link' to="/portafolio" isActive={({isActive}) => isActive ? "active" : null}>Portafolio</NavLink>
+          </li>
+
+          <li className='nav-item'>
+            <NavLink className='nav-link' to="/curriculum" isActive={({isActive}) => isActive ? "active" : null}>Curriculum</NavLink>
+          </li>
+          <li className='nav-item'>
+            <NavLink className='nav-link' to="/contacto" isActive={({isActive}) => isActive ? "active" : null}>Contacto</NavLink>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
   )
 }
+
