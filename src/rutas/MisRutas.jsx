@@ -1,11 +1,11 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter, NavLink } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { Contacto } from "../components/Contacto";
+import { Curriculum } from "../components/Curriculum";
 import { Inicio } from "../components/Inicio";
-import { Contacto } from "../components/Contacto"
-import { Curriculum } from "../components/Curriculum"
-import { Portafolio } from "../components/Portafolio"
-import { HeaderNav } from '../components/layout/HeaderNav';
+import { Portafolio } from "../components/Portafolio";
 import { Footer } from '../components/layout/Footer';
+import { HeaderNav } from '../components/layout/HeaderNav';
 import { Proyecto } from '../components/proyecto';
 
 
@@ -17,8 +17,8 @@ export const MisRutas = () => {
         {/**CONTENIDO CENTRAL*/}
         <section className='content'>
         <Routes>
-            <Route path='/' element={<Inicio/>} />
-            <Route path='/inicio' element={<Inicio/>} />
+            <Route exact path='/' element={<Inicio/>} />
+            <Route path='/inicio' element={<Navigate to="/" />} />
             <Route path='/contacto' element={<Contacto/>} />
             <Route path='/proyecto/:id' element={<Proyecto/>} />
             <Route path='/curriculum' element={<Curriculum/>} />
